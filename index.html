@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPR Compliance Training</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body { 
+        background: var(--secondary); 
+        transition: none !important; 
+      }
+    </style>
+    <script>
+      // Removed dark mode localStorage and class logic
+    </script>
+</head>
+<body>
+    <main>
+        <section id="role-selection" aria-labelledby="role-selection-title">
+            <h1 id="role-selection-title">
+                Select Your Role
+                <!-- EU Flag Icon -->
+                <svg class="eu-icon" width="20" height="20" viewBox="0 0 20 20" aria-label="EU Flag">
+                    <circle cx="10" cy="10" r="9" fill="#003399"/>
+                    <g fill="#FFD700">
+                        <circle cx="10" cy="4" r="0.8"/>
+                        <circle cx="13.4" cy="5" r="0.8"/>
+                        <circle cx="15.5" cy="7.5" r="0.8"/>
+                        <circle cx="15.5" cy="12.5" r="0.8"/>
+                        <circle cx="13.4" cy="15" r="0.8"/>
+                        <circle cx="10" cy="16" r="0.8"/>
+                        <circle cx="6.6" cy="15" r="0.8"/>
+                        <circle cx="4.5" cy="12.5" r="0.8"/>
+                        <circle cx="4.5" cy="7.5" r="0.8"/>
+                        <circle cx="6.6" cy="5" r="0.8"/>
+                        <circle cx="10" cy="4" r="0.8"/>
+                        <circle cx="10" cy="4" r="0.8"/>
+                    </g>
+                </svg>
+            </h1>
+            <div class="role-cards" role="list">
+                <button class="role-card" data-role="HR" role="listitem" aria-label="Select HR role" tabindex="0">
+                    <span class="role-icon" aria-hidden="true">
+                        <!-- HR SVG Icon -->
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="12" r="7" fill="#2a7de1" /><rect x="7" y="22" width="22" height="10" rx="5" fill="#eaf3fc" /></svg>
+                    </span>
+                    <span class="role-title">HR</span>
+                    <span class="role-desc">Manage employee data & recruitment</span>
+                </button>
+                <button class="role-card" data-role="IT" role="listitem" aria-label="Select IT role" tabindex="0">
+                    <span class="role-icon" aria-hidden="true">
+                        <!-- IT SVG Icon -->
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="6" y="10" width="24" height="16" rx="4" fill="#2a7de1" /><rect x="12" y="28" width="12" height="2" rx="1" fill="#eaf3fc" /></svg>
+                    </span>
+                    <span class="role-title">IT</span>
+                    <span class="role-desc">Secure systems & handle data breaches</span>
+                </button>
+                <button class="role-card" data-role="Marketing" role="listitem" aria-label="Select Marketing role" tabindex="0">
+                    <span class="role-icon" aria-hidden="true">
+                        <!-- Marketing SVG Icon --> 
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#eaf3fc" /><path d="M10 26L26 10" stroke="#2a7de1" stroke-width="3" /><circle cx="26" cy="10" r="3" fill="#2a7de1" /></svg>
+                    </span>
+                    <span class="role-title">Marketing</span>
+                    <span class="role-desc">Communicate with customers & leads</span>
+                </button>
+                <button class="role-card" data-role="Senior" role="listitem" aria-label="Select Senior Management role" tabindex="0">
+                    <span class="role-icon" aria-hidden="true">
+                        <!-- Senior Management SVG Icon -->
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                          <circle cx="18" cy="18" r="16" fill="#eaf3fc"/>
+                          <rect x="12" y="20" width="12" height="8" rx="3" fill="#2a7de1"/>
+                          <circle cx="18" cy="14" r="5" fill="#2a7de1"/>
+                          <rect x="15" y="24" width="6" height="2" rx="1" fill="#eaf3fc"/>
+                        </svg>
+                    </span>
+                    <span class="role-title">Senior Management</span>
+                    <span class="role-desc">Board-level GDPR strategy & liability</span>
+                </button>
+                <button class="role-card" data-role="disasters" role="listitem" aria-label="Select GDPR Failure Scenarios" tabindex="0">
+                    <span class="role-icon" aria-hidden="true">
+                        <!-- Disaster SVG Icon -->
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <circle cx="18" cy="18" r="16" fill="#ffeaea"/>
+                            <path d="M10 26L26 10" stroke="#e74c3c" stroke-width="3"/>
+                            <circle cx="26" cy="10" r="3" fill="#e74c3c"/>
+                        </svg>
+                    </span>
+                    <span class="role-title">Failure Scenarios</span>
+                    <span class="role-desc">Test your knowledge with real-world GDPR disasters</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- GDPR-Compliant Footer -->
+    <footer class="gdpr-footer">
+        <div>
+            <!-- GDPR Article References with Tooltips -->
+            <a href="https://gdpr-info.eu/art-5-gdpr/" 
+               class="gdpr-reference" 
+               title="Principles relating to processing of personal data"
+               target="_blank"
+               rel="noopener noreferrer">
+                Article 5
+            </a>
+            <span class="separator">•</span>
+            <a href="https://gdpr-info.eu/art-12-gdpr/" 
+               class="gdpr-reference" 
+               title="Transparency and modalities for the exercise of data subject rights"
+               target="_blank"
+               rel="noopener noreferrer">
+                Article 12
+            </a>
+            <span class="separator">•</span>
+            <a href="https://gdpr-info.eu/art-39-gdpr/" 
+               class="gdpr-reference" 
+               title="Tasks of the data protection officer"
+               target="_blank"
+               rel="noopener noreferrer">
+                Article 39
+            </a>
+        </div>
+        <small style="display: block; margin-top: 0.5rem;">
+            This quiz aligns with GDPR compliance requirements
+        </small>
+    </footer>
+
+    <!-- GDPR Compliance Notice Banner -->
+    <div id="gdpr-compliance-banner" style="position:fixed;bottom:3.5rem;left:0;width:100%;z-index:10001;display:flex;justify-content:center;align-items:center;">
+      <div style="
+        background: var(--card-bg);
+        color: var(--primary);
+        border: 1px solid var(--primary);
+        border-radius: 1.2rem;
+        box-shadow: 0 2px 12px rgba(42,125,225,0.10);
+        padding: 1rem 2rem;
+        margin: 0.5rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.08rem;
+        ">
+        <span>
+          <strong>GDPR Notice (Article 5(1)(a)):</strong>
+          No tracking or data collection occurs on this site.
+        </span>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          var banner = document.getElementById('gdpr-compliance-banner');
+          if (banner) banner.remove();
+        }, 8000);
+      });
+    </script>
+    <style>
+    @media (max-width: 600px) {
+      #gdpr-compliance-banner div {
+        font-size: 0.98rem;
+        padding: 0.7rem 1rem;
+        text-align: center;
+      }
+    }
+    </style>
+    <!-- End GDPR Compliance Notice Banner -->
+    <script>
+      // Removed dark mode restore logic
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

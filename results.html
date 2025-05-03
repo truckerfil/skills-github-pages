@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPR Quiz Results</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { 
+            background: var(--secondary); 
+            transition: none !important; 
+        }
+    </style>
+</head>
+<body>
+    <main class="results-container">
+        <button type="button" onclick="location.href='index.html'" class="back-button">Back to Start</button>
+        
+        <div class="results-content">
+            <h1>Your Quiz Results</h1>
+            
+            <div class="score-section">
+                <div class="score-display">
+                    <h2>Final Score</h2>
+                    <div id="score">0%</div>
+                </div>
+                
+                <div class="performance-message">
+                    <p id="performance-feedback">Loading feedback...</p>
+                </div>
+            </div>
+
+            <button id="view-cheatsheet" class="cheatsheet-toggle" aria-expanded="false" aria-controls="gdpr-cheatsheet" type="button">View GDPR Quick Guide</button>
+            <div id="gdpr-cheatsheet" class="gdpr-inline-cheatsheet" aria-hidden="true" tabindex="-1" hidden></div>
+
+            <div class="feedback-section">
+                <h2>GDPR Knowledge Review</h2>
+                <div id="detailed-feedback">
+                    <!-- Feedback will be injected here by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Simulated Feedback Section -->
+            <div class="simulated-feedback">
+                <h3>Training Impact Overview</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">85%</span>
+                        <p>Found this format more engaging than traditional training</p>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">92%</span>
+                        <p>Reported improved GDPR knowledge</p>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">5min</span>
+                        <p>Average completion time (vs. 60-minute lectures)</p>
+                    </div>
+                </div>
+                <p class="disclaimer">* Simulated data for demonstration purposes</p>
+            </div>
+
+            <div class="action-buttons">
+                <button id="retry-button" class="retry-button">Try Again</button>
+                <button id="home-button" class="home-button">Return Home</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const score = parseFloat(urlParams.get('score') || '0');
+            const role = urlParams.get('role');
+
+            // updates the score display
+            document.getElementById('score').textContent = `${Math.round(score * 100)}%`;
+
+            // button actions shown at the end of the quiz
+            document.getElementById('retry-button').onclick = () => {
+                window.location.href = `quiz.html?role=${role}`;
+            };
+            document.getElementById('home-button').onclick = () => {
+                window.location.href = 'index.html';
+            };
+
+            // Call feedback function if it exists
+            if (typeof window.displayDetailedFeedback === 'function') {
+                window.displayDetailedFeedback(role, score);
+            }
+        });
+    </script>
+
+    <!-- GDPR-Compliant Footer -->
+    <footer class="gdpr-footer">
+        <div>
+            <!-- GDPR Article References with Tooltips -->
+            <a href="https://gdpr-info.eu/art-5-gdpr/" class="gdpr-reference" title="Principles relating to processing of personal data" target="_blank" rel="noopener noreferrer">Article 5</a>
+            <span class="separator">•</span>
+            <a href="https://gdpr-info.eu/art-12-gdpr/" class="gdpr-reference" title="Transparency and modalities for the exercise of data subject rights" target="_blank" rel="noopener noreferrer">Article 12</a>
+            <span class="separator">•</span>
+            <a href="https://gdpr-info.eu/art-39-gdpr/" class="gdpr-reference" title="Tasks of the data protection officer" target="_blank" rel="noopener noreferrer">Article 39</a>
+        </div>
+        <small style="display: block; margin-top: 0.5rem;">This quiz aligns with GDPR compliance requirements</small>
+    </footer>
+    <!-- End GDPR Footer -->
+</body>
+</html> 

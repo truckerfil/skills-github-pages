@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GDPR Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { 
+      background: var(--secondary); 
+      transition: none !important; 
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <button type="button" onclick="location.href='index.html'" class="quiz-next-btn" style="margin-bottom:1.5rem;">&larr; Back to Start</button>
+    <section id="quiz-section" aria-live="polite">
+      <div id="progress-indicator"></div>
+      <div id="progress-bar-container" aria-label="Quiz progress">
+        <div id="progress-bar"></div>
+      </div>
+      <div id="quiz-card">
+        <div id="quiz-container">
+          <!-- Quiz content injected by JS -->
+        </div>
+      </div>
+      <div id="celebration" aria-hidden="true" hidden></div>
+    </section>
+  </main>
+  <!-- GDPR-Compliant Footer -->
+  <footer class="gdpr-footer">
+    <div>
+      <!-- GDPR Article References with Tooltips -->
+      <a href="https://gdpr-info.eu/art-5-gdpr/" class="gdpr-reference" title="Principles relating to processing of personal data" target="_blank" rel="noopener noreferrer">Article 5</a>
+      <span class="separator">•</span>
+      <a href="https://gdpr-info.eu/art-12-gdpr/" class="gdpr-reference" title="Transparency and modalities for the exercise of data subject rights" target="_blank" rel="noopener noreferrer">Article 12</a>
+      <span class="separator">•</span>
+      <a href="https://gdpr-info.eu/art-39-gdpr/" class="gdpr-reference" title="Tasks of the data protection officer" target="_blank" rel="noopener noreferrer">Article 39</a>
+    </div>
+    <small style="display: block; margin-top: 0.5rem;">This quiz aligns with GDPR compliance requirements</small>
+  </footer>
+  <!-- End GDPR Footer -->
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const role = new URLSearchParams(window.location.search).get('role');
+      if (role && typeof questions === 'object' && questions[role]) {
+        currentRole = role;
+        currentQuestions = questions[role];
+        currentQuestion = 0;
+        score = 0;
+        showQuestion();
+        updateProgressBar();
+      } else {
+        window.location.href = 'index.html?error=invalid_role';
+      }
+    });
+  </script>
+</body>
+</html> 
